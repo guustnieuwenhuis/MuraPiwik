@@ -22,7 +22,7 @@ http://www.apache.org/licenses/LICENSE-2.0
 
 	// If true, then additional information is returned by the Application.onError() method
 	// and FW1 will 'reloadApplicationOnEveryRequest' (unless explicitly set otherwise below).
-	variables.framework.debugMode = true;
+	variables.framework.debugMode = false;
 	
 	// change to TRUE if you're developing the plugin so you can see changes in your controllers, etc.
 	variables.framework.reloadApplicationOnEveryRequest = variables.framework.debugMode ? true : false;
