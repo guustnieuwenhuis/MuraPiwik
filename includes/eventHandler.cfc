@@ -48,10 +48,11 @@ component persistent="false" accessors="true" output="false" extends="mura.plugi
 					variables.pluginConfig.getSetting('piwikUrl'),
 					$.siteConfig().getPiwikSiteId()
 				);
-				local.tracking &= "<noscript><p>" & local.ImageTracker.getTracking(
+				local.tracking &= local.ImageTracker.getTracking(
 					variables.pluginConfig.getSetting('piwikUrl'),
-					$.siteConfig().getPiwikSiteId()
-				) & "</p></noscript>";
+					$.siteConfig().getPiwikSiteId(),
+					true
+				);
 				break;
 			case "image":
 				local.tracking = local.ImageTracker.getTracking(
