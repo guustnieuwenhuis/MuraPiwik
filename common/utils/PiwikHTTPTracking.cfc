@@ -20,9 +20,11 @@ component persistent="false" accessors="true" output="false" {
 		local.url &= "&rec=1";
 		local.url &= "&url=" & trackingUrl;
 
-		local.http = new http();
-		local.http.setMethod("get");
-		local.http.setURL(local.url);
-		local.http.send();
+		thread name="piwikTracking" priority="low" {
+			local.http = new http();
+			local.http.setMethod("get");
+			local.http.setURL(local.url);
+			local.http.send();
+		}
 	}
 }
